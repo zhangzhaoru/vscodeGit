@@ -1,7 +1,7 @@
 //找到字符串中只出现第一个一次的字符的位置
 #include<iostream>
 #include<string>
-
+#include<map>
 using namespace std;
 
 
@@ -9,8 +9,12 @@ int FirstNotRepeatintChar(string str){
     int len = str.size();
     if(len==0)
         return -1;
+    map<int,int> hashtable;
     const int tablesize = 256;
-    unsigned int hashtable[tablesize] = {0};
+    for(int i = 0;i<tablesize;i++){
+        hashtable.insert(pair<int,int>(i,0));
+    }
+    
     for(int i = 0;i<len;i++){
         hashtable[str[i]]++;
     }
