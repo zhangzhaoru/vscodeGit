@@ -99,7 +99,8 @@ int main(){
     // }else{
     //    cout<<"the number "<<index<<" is not uglynumber!"<<endl;
     // }
-    cout<<"The "<<index<<" th uglynumber is "<<GetUglyNumber_Solution(index)<<endl;
+    cout<<"The "<<index<<" th uglynumber is "<<
+    GetUglyNumber_Solution(index)<<endl;
         
     system("pause");
     return 0;
