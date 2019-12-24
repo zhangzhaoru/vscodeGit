@@ -45,7 +45,7 @@ ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2){
     return common;
 }
 
-//建立单链表
+
 //带头节点的链表：此种链表保存数据是从head->next开始的，
 //head中并未保存有数据，访问时自然head->next开始，优点就是方便操作。
 void CreateList_H(ListNode *&head){
