@@ -8,22 +8,22 @@
 
 using namespace std;
 
-struct BinaryTreeNode
+struct TreeNode
 {
-	int value;
-	struct BinaryTreeNode *left;
-	struct BinaryTreeNode *right;
+	int val;
+	struct TreeNode *left;
+	struct TreeNode *right;
 };
-struct BinaryTreeNode *CreateBinaryTreeNode(int value);
-void ConnectTreeNodes(struct BinaryTreeNode *pRoot, struct BinaryTreeNode *pLeft, struct BinaryTreeNode *pRight);
-void PrintTreeNode(struct BinaryTreeNode *pNode);
-void PrintTree(struct BinaryTreeNode *pRoot);
-int TreeDepth(struct BinaryTreeNode *pRoot);
-void DestroyTree(struct BinaryTreeNode *pRoot);
+struct TreeNode *CreateTreeNode(int val);
+void ConnectTreeNodes(struct TreeNode *pRoot, struct TreeNode *pLeft, struct TreeNode *pRight);
+void PrintTreeNode(struct TreeNode *pNode);
+void PrintTree(struct TreeNode *pRoot);
+int TreeDepth(struct TreeNode *pRoot);
+void DestroyTree(struct TreeNode *pRoot);
 
 
 
-void Test(struct BinaryTreeNode *pRoot, int expected)
+void Test(struct TreeNode *pRoot, int expected)
 {
 	int result = TreeDepth(pRoot);
 	if (result == expected)
@@ -34,13 +34,13 @@ void Test(struct BinaryTreeNode *pRoot, int expected)
 void Test1()
 {
 	printf("begin:\n");
-	struct BinaryTreeNode *pNode1 = CreateBinaryTreeNode(1);
-	struct BinaryTreeNode *pNode2 = CreateBinaryTreeNode(2);
-	struct BinaryTreeNode *pNode3 = CreateBinaryTreeNode(3);
-	struct BinaryTreeNode *pNode4 = CreateBinaryTreeNode(4);
-	struct BinaryTreeNode *pNode5 = CreateBinaryTreeNode(5);
-	struct BinaryTreeNode *pNode6 = CreateBinaryTreeNode(6);
-	struct BinaryTreeNode *pNode7 = CreateBinaryTreeNode(7);
+	struct TreeNode *pNode1 = CreateTreeNode(1);
+	struct TreeNode *pNode2 = CreateTreeNode(2);
+	struct TreeNode *pNode3 = CreateTreeNode(3);
+	struct TreeNode *pNode4 = CreateTreeNode(4);
+	struct TreeNode *pNode5 = CreateTreeNode(5);
+	struct TreeNode *pNode6 = CreateTreeNode(6);
+	struct TreeNode *pNode7 = CreateTreeNode(7);
  
 	ConnectTreeNodes(pNode1, pNode2, pNode3);
 	ConnectTreeNodes(pNode2, pNode4, pNode5);
@@ -54,16 +54,16 @@ void Test1()
 }
 
 
-struct BinaryTreeNode *CreateBinaryTreeNode(int value)
+struct TreeNode *CreateTreeNode(int val)
 {
-	struct BinaryTreeNode *pNode = (struct BinaryTreeNode *)malloc(sizeof(struct BinaryTreeNode));
-	pNode->value = value;
+	struct TreeNode *pNode = (struct TreeNode *)malloc(sizeof(struct TreeNode));
+	pNode->val = val;
 	pNode->left = NULL;
 	pNode->right = NULL;
 	return pNode;
 }
  
-void ConnectTreeNodes(struct BinaryTreeNode *pRoot, struct BinaryTreeNode *pLeft, struct BinaryTreeNode *pRight)
+void ConnectTreeNodes(struct TreeNode *pRoot, struct TreeNode *pLeft, struct TreeNode *pRight)
 {
 	if (pRoot != NULL)
 	{
@@ -71,14 +71,14 @@ void ConnectTreeNodes(struct BinaryTreeNode *pRoot, struct BinaryTreeNode *pLeft
 		pRoot->right = pRight;
 	}
 }
-void PrintTreeNode(struct BinaryTreeNode *pNode)
+void PrintTreeNode(struct TreeNode *pNode)
 {
 	if (pNode != NULL)
 	{
-		printf("the value of this node is :%d\n", pNode->value);
+		printf("the val of this node is :%d\n", pNode->val);
 		if (pNode->left != NULL)
 		{
-			printf("the value of left child is %d\n",pNode->left->value);
+			printf("the val of left child is %d\n",pNode->left->val);
 		}
 		else
 		{
@@ -86,7 +86,7 @@ void PrintTreeNode(struct BinaryTreeNode *pNode)
 		}
 		if (pNode->right != NULL)
 		{
-			printf("the value of right child is %d\n",pNode->right->value);
+			printf("the val of right child is %d\n",pNode->right->val);
 		}
 		else
 		{
@@ -95,7 +95,7 @@ void PrintTreeNode(struct BinaryTreeNode *pNode)
 	}
 	printf("\n");
 }
-void PrintTree(struct BinaryTreeNode *pRoot)
+void PrintTree(struct TreeNode *pRoot)
 {
 	PrintTreeNode(pRoot);
 	if (pRoot != NULL)
@@ -106,12 +106,12 @@ void PrintTree(struct BinaryTreeNode *pRoot)
 			PrintTree(pRoot->right);
 	}
 }
-void DestroyTree(struct BinaryTreeNode *pRoot)
+void DestroyTree(struct TreeNode *pRoot)
 {
 	if (pRoot != NULL)
 	{
-		struct BinaryTreeNode *pLeft = pRoot->left;
-		struct BinaryTreeNode *pRight = pRoot->right;
+		struct TreeNode *pLeft = pRoot->left;
+		struct TreeNode *pRight = pRoot->right;
  
 		free(pRoot);
 		pRoot == NULL;
@@ -122,7 +122,7 @@ void DestroyTree(struct BinaryTreeNode *pRoot)
 
 
 
-int TreeDepth(struct BinaryTreeNode *pRoot)
+int TreeDepth(struct TreeNode *pRoot)
 {
 	if ( pRoot == NULL )
 		return 0;
