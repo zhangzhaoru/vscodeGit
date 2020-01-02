@@ -13,7 +13,9 @@ struct TreeNode
 	int val;
 	struct TreeNode *left;
 	struct TreeNode *right;
+    TreeNode (int x):val(x),left(NULL),right(NULL){}
 };
+
 struct TreeNode *CreateTreeNode(int val);
 void ConnectTreeNodes(struct TreeNode *pRoot, struct TreeNode *pLeft, struct TreeNode *pRight);
 void PrintTreeNode(struct TreeNode *pNode);
