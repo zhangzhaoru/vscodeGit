@@ -126,12 +126,11 @@ void DestroyTree(struct TreeNode *pRoot)
 
 int TreeDepth(struct TreeNode *pRoot)
 {
-	if ( pRoot == NULL )
-		return 0;
-	int numLeft = TreeDepth(pRoot->left);
-	int numRight = TreeDepth(pRoot->right);
- 
-	return (numLeft > numRight)?(numLeft + 1):(numRight + 1);
+	if(!pRoot)
+        return 0;
+    int leftDepth = TreeDepth(pRoot->left);
+    int rightDepth = TreeDepth(pRoot->right);
+    return max(leftDepth,rightDepth)+1;
 }
 
 
