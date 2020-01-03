@@ -1,5 +1,4 @@
 //在递增数组中寻找两个数使得和等于目标值，两个数的
-//乘积最小
 #include<iostream>
 #include<vector>
 
