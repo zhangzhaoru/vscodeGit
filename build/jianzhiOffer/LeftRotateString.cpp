@@ -1,4 +1,7 @@
 //左旋转字符串
+//两种方法实现字符串循环左移
+//1 使用substr提取子字符串重新组合
+//2 对各个子字符串翻转在对字符串翻转
 #include<iostream>
 #include<string>
 
