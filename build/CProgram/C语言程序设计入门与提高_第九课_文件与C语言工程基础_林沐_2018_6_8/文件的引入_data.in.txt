@@ -1,0 +1,6 @@
+5
+Bill 4 91 70 66
+Tom 1 69 81 77
+XiaoFang 5 70 60 95
+XiaoMing 3 81 87 85
+Mike 2 80 97 71
