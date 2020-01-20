@@ -1,0 +1,15 @@
+tags
+*~
+*.o
+*.i
+.*project
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.bbl
+*.blg
+*.synctex
+auto
